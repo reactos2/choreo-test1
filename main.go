@@ -17,6 +17,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/", handleHomePage)
+	r.GET("/greeter/greet", handleGreeter)
 
 	r.GET("/:name", func(c *gin.Context) {
 		name := c.Param("name")
@@ -30,5 +31,8 @@ func main() {
 }
 
 func handleHomePage(ctx *gin.Context) {
+	ctx.String(200, "welcome to koyeb test 1")
+}
+func handleGreeter(ctx *gin.Context) {
 	ctx.String(200, "welcome to koyeb test 1")
 }

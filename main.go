@@ -9,12 +9,14 @@ import (
 
 func main() {
 	port := os.Getenv("PORT")
-
+	fmt.Sprintf("port check 1:%s", port)
 	if port == "" {
 		port = "8081"
 	}
+	fmt.Sprintf("port check 2:%s", port)
 
 	r := gin.Default()
+	gin.SetMode(gin.ReleaseMode)
 
 	r.GET("/", handleHomePage)
 	r.GET("/greeter/greet", handleGreeter)
@@ -27,6 +29,7 @@ func main() {
 		})
 	})
 
+	fmt.Sprintf("port check 3:%s", port)
 	r.Run(fmt.Sprintf(":%s", port))
 }
 

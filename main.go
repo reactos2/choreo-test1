@@ -10,11 +10,11 @@ import (
 func main() {
 	gin.SetMode(gin.ReleaseMode)
 	port := os.Getenv("PORT")
-	fmt.Sprintf("port check 1:%s", port)
+	fmt.Println("port check 1: ", port)
 	if port == "" {
 		port = "8081"
 	}
-	fmt.Sprintf("port check 2:%s", port)
+	fmt.Println("port check 2: ", port)
 
 	r := gin.Default()
 
@@ -30,7 +30,7 @@ func main() {
 		})
 	})
 
-	fmt.Sprintf("port check 3:%s", port)
+	fmt.Println("port check 3: ", port)
 	r.Run(fmt.Sprintf(":%s", port))
 }
 
@@ -41,5 +41,6 @@ func handleGreeter(ctx *gin.Context) {
 	ctx.String(200, "welcome to koyeb test 1")
 }
 func handleTest2(ctx *gin.Context) {
+	fmt.Println("http get test2")
 	ctx.String(200, "koyeb test 2")
 }

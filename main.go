@@ -20,6 +20,7 @@ func main() {
 
 	r.GET("/", handleHomePage)
 	r.GET("/greeter/greet", handleGreeter)
+	r.GET("/test2", handleTest2)
 
 	r.GET("/:name", func(c *gin.Context) {
 		name := c.Param("name")
@@ -38,4 +39,7 @@ func handleHomePage(ctx *gin.Context) {
 }
 func handleGreeter(ctx *gin.Context) {
 	ctx.String(200, "welcome to koyeb test 1")
+}
+func handleTest2(ctx *gin.Context) {
+	ctx.String(200, "koyeb test 2")
 }

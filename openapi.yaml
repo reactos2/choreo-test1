@@ -25,3 +25,18 @@ paths:
                 type: string
       deprecated: false
       security: []
+  /test2:
+    get:
+      summary: test22
+      description: just a test 2
+      tags:
+        - test23
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+      deprecated: false
+      security: []

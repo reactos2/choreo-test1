@@ -12,7 +12,7 @@ func main() {
 	port := os.Getenv("PORT")
 	fmt.Println("port check 1: ", port)
 	if port == "" {
-		port = "8081"
+		port = "8080"
 	}
 	fmt.Println("port check 2: ", port)
 
